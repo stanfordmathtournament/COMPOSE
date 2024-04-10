@@ -6,7 +6,8 @@ export let max_round_display = 8;
 export let questions_per_round = 3;
 
 // let team_lookup = {};
-let points = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// let points = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+let points = [10, 11, 12, 13, 14, 16, 18, 21, 25];
 let answer_data = {};
 
 export async function getTeams() {
@@ -156,7 +157,7 @@ export async function getStatus() {
             for (let j = 1; j < questions_per_round + 1; j++) {
                 if (answer_data[team][i][j]["correct"]) {
                     score += points[i - 1];
-                    if (j < max_round_display + 1) {
+                    if (i < max_round_display + 1) {
                         showing_score += points[i - 1];
                     }
                 }
